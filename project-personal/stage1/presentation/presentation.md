@@ -95,6 +95,9 @@ header-includes:
 
 Проверяю есть ли подключение между public и репозиторием evatsoppa.github.io, после чего отправляю изменения на глобальный репозиторий.
 
+![Screenshot_111](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/3b13ff3d-48f5-43c7-ab55-cae5ee5b1fba)
+
+
 ## Результаты и выводы
 
 - Научилась размещать сайт на Github pages
