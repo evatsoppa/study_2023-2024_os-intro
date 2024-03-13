@@ -1,0 +1,222 @@
+---
+## Front matter
+title: "Отчет по лабораторной работе №4"
+subtitle: "Операционные системы"
+author: "Цоппа Ева Эдуардовна"
+
+## Generic otions
+lang: ru-RU
+toc-title: "Содержание"
+
+## Bibliography
+bibliography: bib/cite.bib
+csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
+
+## Pdf output format
+toc: true # Table of contents
+toc-depth: 2
+lof: true # List of figures
+lot: true # List of tables
+fontsize: 12pt
+linestretch: 1.5
+papersize: a4
+documentclass: scrreprt
+## I18n polyglossia
+polyglossia-lang:
+  name: russian
+  options:
+	- spelling=modern
+	- babelshorthands=true
+polyglossia-otherlangs:
+  name: english
+## I18n babel
+babel-lang: russian
+babel-otherlangs: english
+## Fonts
+mainfont: PT Serif
+romanfont: PT Serif
+sansfont: PT Sans
+monofont: PT Mono
+mainfontoptions: Ligatures=TeX
+romanfontoptions: Ligatures=TeX
+sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
+monofontoptions: Scale=MatchLowercase,Scale=0.9
+## Biblatex
+biblatex: true
+biblio-style: "gost-numeric"
+biblatexoptions:
+  - parentracker=true
+  - backend=biber
+  - hyperref=auto
+  - language=auto
+  - autolang=other*
+  - citestyle=gost-numeric
+## Pandoc-crossref LaTeX customization
+figureTitle: "Рис."
+tableTitle: "Таблица"
+listingTitle: "Листинг"
+lofTitle: "Список иллюстраций"
+lotTitle: "Список таблиц"
+lolTitle: "Листинги"
+## Misc options
+indent: true
+header-includes:
+  - \usepackage{indentfirst}
+  - \usepackage{float} # keep figures where there are in the text
+  - \floatplacement{figure}{H} # keep figures where there are in the text
+---
+
+# Цель работы
+
+Получение навыков правильной работы с репозиториями git.
+
+# Задание
+
+1. Выполнить работу для тестового репозитория.
+2. Преобразовать рабочий репозиторий в репозиторий с git-flow и conventional commits.
+
+
+# Теоретическое введение
+
+Gitflow Workflow опубликована и популяризована Винсентом Дриссеном.
+Gitflow Workflow предполагает выстраивание строгой модели ветвления с учётом выпуска проекта.
+Данная модель отлично подходит для организации рабочего процесса на основе релизов.
+Работа по модели Gitflow включает создание отдельной ветки для исправлений ошибок в рабочей среде.
+Последовательность действий при работе по модели Gitflow:
+      Из ветки master создаётся ветка develop.
+      Из ветки develop создаётся ветка release.
+      Из ветки develop создаются ветки feature.
+      Когда работа над веткой feature завершена, она сливается с веткой develop.
+      Когда работа над веткой релиза release завершена, она сливается в ветки develop и master.
+      Если в master обнаружена проблема, из master создаётся ветка hotfix.
+      Когда работа над веткой исправления hotfix завершена, она сливается в ветки develop и master.
+
+
+
+# Выполнение лабораторной работы
+
+Выполняем установку из коллекции репозиториев Сorp (рис.1 и рис.2).
+
+![Screenshot_120](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/cce22e65-698a-4c3d-bc86-d8c97970ad7a)
+
+![Screenshot_121](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/32849b2c-601f-4b1e-b45e-7c0214a8daae)
+
+Устанавливаю пакеты Node.js, на которых базируется программное обеспечение для семантического версионирования и общепринятых коммитов (рис.3).
+
+![Screenshot_122](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/95e13e5c-dd2f-424b-b138-2088807ac805)
+
+Запускаю нужную команду pnpm setup (рис.4)
+
+![Screenshot_123](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/3dea5307-1d86-4a3f-a40b-685a2a743479)
+
+Выполняю команду source ~/.bashrc, для того, чтобы работать с окружением для git-flow. (рис.5)
+
+![Screenshot_124](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/8b48300e-05c2-4dfc-96f7-276a7ce833bd)
+
+Запускаю команду сommitizen  для помощи в форматировании коммитов.(рис.6)
+
+![Screenshot_125](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/d93792e8-e910-4fcb-b77c-7271972a9d7d)
+
+Выполняю команду standard-changelog  для помощи в создании логов.(рис.7)
+
+![Screenshot_126](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/6421063d-6755-4341-93d8-5206312a0d25)
+
+Теперь создаю репозиторий git-extended на Github(рис.8)
+
+![Screenshot_130](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/a1cf5356-af81-42bc-a724-0a10582915da)
+
+Теперь создаю репозиторий git-extended на консоли и захожу туда (рис.9)
+
+![Screenshot_127](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/7357b898-1f75-49d1-85fc-8f516fa0ffb4)
+
+Создаю первый файл README.md и инициализию репозиторий(рис.10)
+
+![Screenshot_128](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/ad8a11fd-82b9-4c3c-9a04-29ece39b42f8)
+
+Совершаю первый коммит с помощью команды git commit -m "first commit" и подключаю удаленный репозиторий к консоли с помощью команды git remote add origin (ссылка на репозиторий). Затем отправляю изменения в репозиторий на сайте. (рис.11)
+
+![Screenshot_129](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/f2580a25-afe2-4599-88a4-c1bfb5b1447f)
+
+Вижу, что изменнеия ыли успешно отправлены (рис.12)
+
+![Screenshot_131](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/a25fc1e1-18e3-4f6e-a4cb-93d4e57097ff)
+
+Создаю файл package.json с помощью команды pnpm init (рис.13)
+
+![Screenshot_132](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/d72d560e-e338-47ed-a4b1-d1bfa959fa3e)
+
+Изменяю лицензию в файле на CC-BY-4.0 и добавляю код с config как было дано в лабораторной работе(рис.14)
+
+![Screenshot_133](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/85d3cba1-ad61-4efe-beab-b0417b434d85)
+
+Добавлю новые файлы с помощью git add и выполню коммит с помощью git cz(рис.15)
+
+![Screenshot_134](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/9761e8d4-7184-46f0-b441-449a5148e4e7)
+
+Отправляю изменения в локальный репозиторий(рис.16)
+
+![Screenshot_135](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/1f7e7f7d-da92-40f0-a322-a4344c9ca2f5)
+
+Для работы с конфигурацией git-flow я сначала инициализирую git-flow с git flow init. Префикс для ярлыков установим в v(рис.17)
+
+![Screenshot_136](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/f8cdc731-da50-45a8-aae6-e3d654074df3)
+
+Проверяю , что я нахожусь на ветке develop (рис.18)
+
+![Screenshot_137](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/39f63add-8c2c-42b6-ac69-878ceecc4219)
+
+Загружаю весь репозиторий в хранилище с помощью git push --all 
+Установлю внешнюю ветку как вышестоящую для этой ветки (рис.19)
+
+![Screenshot_138](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/868712dd-a274-4bb5-8644-43426b0cbe15)
+
+Создадаю  релиз с версией 1.0.0 
+Создам журнал изменений (рис.20)
+
+![Screenshot_139](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/3f01ff33-3a45-485e-99b4-5fa34a63d417)
+
+Добавлю журнал изменений в индекс 
+Теперь я должна положить релизную ветку в основную ветку. Далее я ввожу необходимые сообщения для обозначения цели изменений (рис.21)
+
+![Screenshot_140](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/1516037c-88a9-4313-b98f-f03b599e45b0)
+
+Вижу, что данный процесс был успешно завершен (рис.22)
+
+![Screenshot_141](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/a9162972-f873-4c1e-8ddb-71c85b2d3479)
+
+Далее я отправляю данные на github 
+Затем отправляю в репозиторий все проставленные теги 
+Создам релиз на github. Для этого буду использовать утилиты работы с github (рис.23)
+
+![Screenshot_142](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/bd83968e-6f50-414d-ac17-92aaee122dc9)
+
+Для дополнительного примеры работы с релизами  я создам ветку для новой функциональности (рис.24)
+
+![Screenshot_143](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/f5097dc7-191e-4f0e-af61-466d2268001f)
+
+Объединяю ветку feature_branch c develop (рис.25)
+
+![Screenshot_144](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/88fbd9f0-db86-4d69-9709-b0bd4fe1f64b)
+
+Теперь я создаю  релиз с версией 1.2.3 
+Я снова редактирую файл package.json, меняя текущую версию  на  1.2.3. 
+Снова создам журнал изменений 
+Добавлю журнал изменений в индекс 
+Снова перенаправляю релизную ветку в основную ветку и отвечаю на необходимые вопросы для этого(ярлык v оставлю прежним) 
+Отправляю данные на github (рис.26)
+
+![Screenshot_145](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/9bf5b833-6a7b-40af-b38d-8917f6b9594a)
+
+Далее отправляю все теги на github.
+Снова создам релиз на github с комментарием из журнала изменений 
+Захожу на в свой репозиторий на сайте и вижу, что продленные изменения и созданные файлы успешно лежат в созданном репозитории.(рис.27)
+
+![Screenshot_146](https://github.com/evatsoppa/study_2023-2024_os-intro/assets/145338773/55d63a64-8c17-4be2-9bc5-931dac86e0be)
+
+# Выводы
+
+Я получила навыки правильной работы с репозиториями git.
+
+# Список литературы
+
+Лабораторная работа №4
